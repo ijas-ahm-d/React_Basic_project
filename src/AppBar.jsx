@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
-import MenuIcon from "@mui/material/Menu";
+import { AppBar, Toolbar, IconButton, Typography, Box } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import React from "react";
 const MyAppBar = ({ ToggleFunction }) => {
     return (<AppBar position="static" style={{ width: "100%" }}>

@@ -2,8 +2,7 @@ import React from 'react';
 import MyAppBar from './AppBar';
 import MyDrawer from './Drawer';
 import StudentTable from './StudentTable';
-import { Box, CssBaseline, ThemeProvider } from '@mui/material';
-
+import { CssBaseline } from '@mui/material';
 import './App.css';
 
 const App = () => {
