@@ -1,8 +1,5 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
+import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
 import MenuIcon from "@mui/material/Menu";
-import Typography from "@mui/material/Typography";
 import React from "react";
 const MyAppBar = ({ ToggleFunction }) => {
     return (<AppBar position="static" style={{ width: "100%" }}>
@@ -15,7 +12,7 @@ const MyAppBar = ({ ToggleFunction }) => {
             >
                 <MenuIcon />
             </IconButton>
-            <Typography variant="h6">
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 My Sample React App
             </Typography>
         </Toolbar>

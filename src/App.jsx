@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MyAppBar from './AppBar';
 import MyDrawer from './Drawer';
 import StudentTable from './StudentTable';
-import { Box } from '@mui/material';
+import { Box, CssBaseline, ThemeProvider } from '@mui/material';
 
 import './App.css';
 
 const App = () => {
-  const [open, setOpen] = useState(false);
-  const drawerAction = () => {
-    setOpen(!open)
+  const [open, setOpen] = React.useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
   };
   const students = [
     { name: 'Alice', email: 'alice@example.com', phone: '123-456-7890' },
@@ -20,25 +24,16 @@ const App = () => {
   ];
 
   return (
-    <Box
-      sx={{
-        width: '100vw',
-        maxWidth: '100%',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        overflowY: students.length > 0 ? 'auto' : 'hidden',
-      }}
-    >
-      <MyAppBar ToggleFunction={drawerAction} />
-      <MyDrawer open={open} drawerAction={drawerAction} items={[
+    <>
+      <CssBaseline />
+      <MyAppBar ToggleFunction={handleDrawerOpen} />
+      <MyDrawer open={open} drawerAction={handleDrawerClose} items={[
         { text: 'Dashboard' },
         { text: 'Hub Details' },
         { text: 'Students' },
-
       ]} />
       <StudentTable students={students} />
-    </Box>
+    </>
 
   );
 };
